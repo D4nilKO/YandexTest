@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Project.Components.Scripts
 {
@@ -12,12 +13,9 @@ namespace Project.Components.Scripts
 
         private Rigidbody2D _rigidbody;
 
-        private void Start()
+        private void Awake()
         {
-            transform.position = _startPosition;
-
             _rigidbody = GetComponent<Rigidbody2D>();
-            _rigidbody.velocity = Vector2.zero;
         }
 
         private void Update()
@@ -32,6 +30,12 @@ namespace Project.Components.Scripts
                 _rigidbody.AddForce(Vector2.up * _verticalForce, ForceMode2D.Force);
                 _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
             }
+        }
+
+        public void Reset()
+        {
+            transform.position = _startPosition;
+            _rigidbody.velocity = Vector2.zero;
         }
     }
 }
