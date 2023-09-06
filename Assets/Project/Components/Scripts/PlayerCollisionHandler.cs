@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NTC.Global.Pool;
+using UnityEngine;
 
 namespace Project.Components.Scripts
 {
@@ -16,7 +17,7 @@ namespace Project.Components.Scripts
         {
             if (collision.TryGetComponent(out Coin coin))
             {
-                coin.Destroy();
+                NightPool.Despawn(coin.gameObject);
                 _player.IncreaseScore();
             }
             else

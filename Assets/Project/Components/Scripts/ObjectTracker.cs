@@ -3,14 +3,14 @@
 namespace Project.Components.Scripts
 {
     
-    public class PlayerTracker : MonoBehaviour
+    public class ObjectTracker : MonoBehaviour
     {
-        [SerializeField] private Player _player;
+        [SerializeField] private GameObject _gameObject;
         [SerializeField] private float _xOffset;
 
         private void Update()
         {
-            transform.position = new Vector3(_player.transform.position.x - _xOffset, transform.position.y,
+            transform.position = new Vector3(_gameObject.transform.position.x + _xOffset, transform.position.y,
                 transform.position.z);
         }
     }
