@@ -18,6 +18,11 @@ namespace Project.Components.Scripts
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
+        private void Start()
+        {
+            Time.timeScale = 0;
+        }
+
         private void Update()
         {
             Move();
@@ -25,8 +30,13 @@ namespace Project.Components.Scripts
 
         private void Move()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || (Input.GetMouseButton(0)))
             {
+                if (Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                }
+                
                 _rigidbody.AddForce(Vector2.up * _verticalForce, ForceMode2D.Force);
                 _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
             }

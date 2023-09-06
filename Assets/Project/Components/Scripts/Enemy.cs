@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using NTC.Global.Pool;
 using UnityEngine;
 using Random = System.Random;
 
 namespace Project.Components.Scripts
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IPoolItem
     {
         private Random _random;
 
@@ -20,17 +21,29 @@ namespace Project.Components.Scripts
 
         [SerializeField] private float _speed;
 
-        private void Start()
+        void IPoolItem.OnSpawn()
         {
-            _random = new Random();
+            _random ??= new Random();
 
-            _moveSpots.Add(gameObject.transform.position);
-            _moveSpots.Add(_moveSpots[0] + (GetDistance() * GetDirection()));
+            GetNewSpots();
+        }
+
+        public void OnDespawn()
+        {
+            
         }
 
         private void Update()
         {
             Move();
+        }
+
+        private void GetNewSpots()
+        {
+            _moveSpots.Clear();
+            
+            _moveSpots.Add(gameObject.transform.position);
+            _moveSpots.Add(_moveSpots[0] + (GetDistance() * GetDirection()));
         }
 
         private Vector3 GetDirection()
