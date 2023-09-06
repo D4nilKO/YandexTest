@@ -20,10 +20,15 @@ namespace Project.Components.Scripts
                 NightPool.Despawn(coin.gameObject);
                 _player.IncreaseScore();
             }
+            else if (collision.TryGetComponent(out CoinMagnet coinMagnet))
+            {
+                
+            }
             else
             {
                 _player.Die();
             }
+            
         }
     }
 }

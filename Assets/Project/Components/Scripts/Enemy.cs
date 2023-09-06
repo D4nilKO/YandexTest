@@ -45,7 +45,7 @@ namespace Project.Components.Scripts
         private int GetDistance()
         {
             int distance = _random.Next(_minDistance, _maxDistance);
-            
+
             return distance;
         }
 
