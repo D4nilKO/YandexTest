@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Project.Components.Scripts
 {
@@ -12,6 +12,8 @@ namespace Project.Components.Scripts
         [SerializeField] private float _verticalForce = 1.5f;
 
         private Rigidbody2D _rigidbody;
+        
+        public event UnityAction GameStarted; 
 
         private void Awake()
         {
@@ -35,6 +37,7 @@ namespace Project.Components.Scripts
                 if (Time.timeScale == 0)
                 {
                     Time.timeScale = 1;
+                    GameStarted?.Invoke();
                 }
                 
                 _rigidbody.AddForce(Vector2.up * _verticalForce, ForceMode2D.Force);

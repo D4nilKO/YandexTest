@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace Project.Components.Scripts
@@ -8,7 +9,9 @@ namespace Project.Components.Scripts
     public class Player : MonoBehaviour
     {
         private PlayerMover _mover;
-        [SerializeField] private int _score;
+        private int _score;
+
+        public event UnityAction<int> ScoreChanged;
 
         private void Start()
         {
@@ -20,11 +23,14 @@ namespace Project.Components.Scripts
         public void IncreaseScore()
         {
             _score++;
+            ScoreChanged?.Invoke(_score);
         }
 
-        public void ResetPlayer()
+        private void ResetPlayer()
         {
             _score = 0;
+            ScoreChanged?.Invoke(_score);
+            
             _mover.Reset();
         }
 
