@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Project.Components.Scripts
@@ -8,12 +9,14 @@ namespace Project.Components.Scripts
     public class PlayerMover : MonoBehaviour
     {
         [SerializeField] private Vector3 _startPosition;
-        [SerializeField] private float _speed = 5f;
-        [SerializeField] private float _verticalForce = 1.5f;
+        [SerializeField] private float _speed = 10f;
+        [SerializeField] private float _verticalForce = 50;
+
+        private bool _gameIsStarted;
 
         private Rigidbody2D _rigidbody;
-        
-        public event UnityAction GameStarted; 
+
+        public event UnityAction GameStarted;
 
         private void Awake()
         {
@@ -27,20 +30,23 @@ namespace Project.Components.Scripts
 
         private void Update()
         {
+            if (_gameIsStarted == false && (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)))
+            {
+                Time.timeScale = 1;
+                _gameIsStarted = true;
+                GameStarted?.Invoke();
+            }
+            
             Move();
         }
 
+        
+
         private void Move()
         {
-            if (Input.GetKey(KeyCode.Space) || (Input.GetMouseButton(0)))
+            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
             {
-                if (Time.timeScale == 0)
-                {
-                    Time.timeScale = 1;
-                    GameStarted?.Invoke();
-                }
-                
-                _rigidbody.AddForce(Vector2.up * _verticalForce, ForceMode2D.Force);
+                _rigidbody.AddForce(Vector2.up * _verticalForce);
                 _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
             }
         }
