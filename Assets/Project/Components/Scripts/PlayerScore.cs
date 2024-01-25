@@ -25,7 +25,7 @@ namespace Project.Components.Scripts
         private void Awake()
         {
             _playerCollisionHandler = GetComponent<PlayerCollisionHandler>();
-            _score = 0;
+            Score = 0;
         }
 
         private void OnEnable()

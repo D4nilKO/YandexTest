@@ -41,10 +41,13 @@ namespace Project.Components.Scripts
                 _rigidbody.AddForce(Vector2.up * (_verticalForce * Time.deltaTime), ForceMode2D.Impulse);
                 _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
 
-                transform.rotation = _maxRotation;
+                transform.rotation = Quaternion.Lerp(transform.rotation, _maxRotation, _rotationSpeed * Time.deltaTime);
             }
-
-            transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
+            else
+            {
+                transform.rotation =
+                    Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed / 2 * Time.deltaTime);
+            }
         }
     }
 }
