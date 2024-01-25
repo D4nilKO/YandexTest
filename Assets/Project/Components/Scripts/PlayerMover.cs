@@ -1,60 +1,50 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 namespace Project.Components.Scripts
 {
-    [RequireComponent(typeof(Player))]
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMover : MonoBehaviour
     {
-        [SerializeField] private Vector3 _startPosition;
         [SerializeField] private float _speed = 10f;
-        [SerializeField] private float _verticalForce = 50;
+        [SerializeField] private float _verticalForce = 0.3f;
+        [SerializeField] private float _rotationSpeed;
+        [SerializeField] private float _minRotationZ;
+        [SerializeField] private float _maxRotationZ;
 
-        private bool _gameIsStarted;
+        [SerializeField] private KeyCode _moveKey = KeyCode.Space;
 
+        private Vector3 _startPosition;
         private Rigidbody2D _rigidbody;
+        private Quaternion _minRotation;
+        private Quaternion _maxRotation;
 
-        public event UnityAction GameStarted;
+        public KeyCode GetKey => _moveKey;
 
         private void Awake()
         {
+            _startPosition = transform.position;
             _rigidbody = GetComponent<Rigidbody2D>();
-        }
 
-        private void Start()
-        {
-            Time.timeScale = 0;
+            _minRotation = Quaternion.Euler(0, 0, _minRotationZ);
+            _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
         }
 
         private void Update()
         {
-            if (_gameIsStarted == false && (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)))
-            {
-                Time.timeScale = 1;
-                _gameIsStarted = true;
-                GameStarted?.Invoke();
-            }
-            
             Move();
         }
 
-        
-
         private void Move()
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+            if (Input.GetKey(_moveKey))
             {
-                _rigidbody.AddForce(Vector2.up * _verticalForce);
+                _rigidbody.AddForce(Vector2.up * (_verticalForce * Time.deltaTime), ForceMode2D.Impulse);
                 _rigidbody.velocity = new Vector2(_speed, _rigidbody.velocity.y);
-            }
-        }
 
-        public void Reset()
-        {
-            transform.position = _startPosition;
-            _rigidbody.velocity = Vector2.zero;
+                transform.rotation = _maxRotation;
+            }
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
         }
     }
 }

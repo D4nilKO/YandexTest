@@ -16,13 +16,12 @@ namespace Project.Components.Scripts
         [Header("Время спауна")] [SerializeField]
         private float _timerSeconds;
 
-        [Header("Дистанция спавна")] 
-        [SerializeField] private int _minSpawnDistanceX;
+        [Header("Дистанция спавна")] [SerializeField]
+        private int _minSpawnDistanceX;
+
         [SerializeField] private int _maxSpawnDistanceX;
-        
-        [Space(10)] 
-        
-        [SerializeField] private int _minSpawnDistanceY;
+
+        [Space(10)] [SerializeField] private int _minSpawnDistanceY;
         [SerializeField] private int _maxSpawnDistanceY;
 
         private float _startTimerSeconds = 0.1f;
@@ -34,13 +33,15 @@ namespace Project.Components.Scripts
         private void Awake()
         {
             _spawnTimer = new SyncedTimer(_timerType, _timerSeconds);
-
             _random = new Random();
+        }
 
+        private void OnEnable()
+        {
             _spawnTimer.TimerFinished += OnTimerFinished;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             _spawnTimer.TimerFinished -= OnTimerFinished;
         }
