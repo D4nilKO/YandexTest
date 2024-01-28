@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fabf93a7e5b3b1d43b24fa3e81a78fc1
+guid: d3095f2d99f085c49a6411c4c6a8ec4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,17 +43,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,6 +95,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -132,33 +145,143 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: laser-bolts_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819378f72ad109f4d98c6c1dda4fcfb4
+      internalID: 1834246958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser-bolts_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0e65eece2217b4cb9b58a71f19d0fb
+      internalID: 924426103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser-bolts_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445456ef2209dfb4f98b28d01c140ef0
+      internalID: -1767526516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laser-bolts_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c0e80c70983fa4b946e9c6d8372421
+      internalID: -901630272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 5, y: 0}
+      - {x: 2, y: 0}
+      - {x: 2, y: -10}
+      - {x: 2, y: -14}
+      - {x: 2, y: -16}
+      - {x: 11, y: -16}
+      - {x: 11, y: -15}
+      - {x: 11, y: -11}
+      - {x: 11, y: -3}
+      - {x: 11, y: 0}
+    - - {x: -9, y: 0}
+      - {x: -12, y: 0}
+      - {x: -12, y: -10}
+      - {x: -12, y: -16}
+      - {x: -8, y: -16}
+      - {x: -3, y: -16}
+      - {x: -3, y: -9}
+      - {x: -3, y: -1}
+      - {x: -3, y: 0}
+    - - {x: -12, y: 11}
+      - {x: -12, y: 10}
+      - {x: -12, y: 4}
+      - {x: -12, y: 2}
+      - {x: -3, y: 2}
+      - {x: -3, y: 4}
+      - {x: -3, y: 11}
+      - {x: -6, y: 11}
+    - - {x: 2, y: 11}
+      - {x: 2, y: 8}
+      - {x: 2, y: 5}
+      - {x: 2, y: 2}
+      - {x: 11, y: 2}
+      - {x: 11, y: 5}
+      - {x: 11, y: 11}
+      - {x: 8, y: 11}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laser-bolts_0: 1834246958
+      laser-bolts_1: 924426103
+      laser-bolts_2: -1767526516
+      laser-bolts_3: -901630272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

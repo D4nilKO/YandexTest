@@ -17,7 +17,7 @@ namespace Project.Components.Scripts
                 TouchedCoin?.Invoke();
             }
 
-            if (collision.TryGetComponent(out EnemyMover enemy))
+            if (collision.TryGetComponent(out Enemy enemy))
             {
                 TouchedEnemy?.Invoke();
             }

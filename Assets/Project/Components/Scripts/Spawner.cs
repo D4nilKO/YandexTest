@@ -13,15 +13,19 @@ namespace Project.Components.Scripts
         [Header("Объект для спауна")] [SerializeField]
         private GameObject _prefab;
 
+        [SerializeField] private bool _isSpawnerRotation;
+
         [Header("Время спауна")] [SerializeField]
         private float _timerSeconds;
 
-        [Header("Дистанция спавна")] [SerializeField]
+        [Header("Дистанция спавна по X")] [SerializeField]
         private int _minSpawnDistanceX;
 
         [SerializeField] private int _maxSpawnDistanceX;
 
-        [Space(10)] [SerializeField] private int _minSpawnDistanceY;
+        [Header("Дистанция спавна по Y")] [SerializeField]
+        private int _minSpawnDistanceY;
+
         [SerializeField] private int _maxSpawnDistanceY;
 
         private float _startTimerSeconds = 0.1f;
@@ -73,7 +77,8 @@ namespace Project.Components.Scripts
 
         private void Spawn(GameObject prefab)
         {
-            NightPool.Spawn(prefab, GetSpawnPoint());
+            NightPool.Spawn(prefab, GetSpawnPoint(),
+                _isSpawnerRotation ? transform.rotation : prefab.transform.rotation);
         }
     }
 }

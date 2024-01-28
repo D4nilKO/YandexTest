@@ -1,18 +1,12 @@
-﻿using NTC.Global.Pool;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Project.Components.Scripts
 {
     public class Bullet : MonoBehaviour
     {
-        [SerializeField] private float _speed;
-        private Vector2 _direction;
-
-        public void SetDirection(Vector2 direction)
-        {
-            _direction = direction;
-        }
-
+        [SerializeField] [Min(0.1f)] private float _speed = 0.1f;
+        
+        private Vector2 _direction = Vector2.up;
         private void Update()
         {
             Move();
@@ -25,7 +19,7 @@ namespace Project.Components.Scripts
 
         private void OnBecameInvisible()
         {
-            NightPool.Despawn(gameObject);
+            UserUtils.TryDespawn(gameObject);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NTC.Global.Pool;
 using UnityEngine;
 using Random = System.Random;
@@ -19,6 +20,11 @@ namespace Project.Components.Scripts
         private int _minDirectionValue = 0;
         private int _maxDirectionValue = 1;
 
+        private void Awake()
+        {
+            _random = new Random();
+        }
+
         private void Update()
         {
             Move();
@@ -26,16 +32,11 @@ namespace Project.Components.Scripts
 
         private void OnBecameInvisible()
         {
-            if (gameObject.activeInHierarchy)
-            {
-                NightPool.Despawn(gameObject);
-            }
+            UserUtils.TryDespawn(gameObject);
         }
 
         public void OnSpawn()
         {
-            _random ??= new Random();
-
             GetNewSpots();
         }
 
@@ -67,12 +68,15 @@ namespace Project.Components.Scripts
 
         private void Move()
         {
-            transform.position =
-                Vector3.MoveTowards(transform.position, _moveSpots[_spotNumber], _speed * Time.deltaTime);
-
-            if (transform.position == _moveSpots[_spotNumber])
+            if (_moveSpots.Count > 0)
             {
-                _spotNumber = (_spotNumber + 1) % _moveSpots.Count;
+                transform.position =
+                    Vector3.MoveTowards(transform.position, _moveSpots[_spotNumber], _speed * Time.deltaTime);
+
+                if (transform.position == _moveSpots[_spotNumber])
+                {
+                    _spotNumber = (_spotNumber + 1) % _moveSpots.Count;
+                }
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using NTC.Global.Pool;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Project.Components.Scripts
 {
@@ -7,10 +6,7 @@ namespace Project.Components.Scripts
     {
         private void OnBecameInvisible()
         {
-            if (gameObject.activeInHierarchy)
-            {
-                NightPool.Despawn(gameObject);
-            }
+            UserUtils.TryDespawn(gameObject);
         }
     }
 }
