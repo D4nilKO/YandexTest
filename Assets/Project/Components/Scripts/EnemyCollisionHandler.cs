@@ -1,4 +1,5 @@
 ﻿using System;
+using NTC.Global.Pool;
 using UnityEngine;
 
 namespace Project.Components.Scripts
@@ -7,9 +8,9 @@ namespace Project.Components.Scripts
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.TryGetComponent(out Obstacle obstacle))
+            if (col.TryGetComponent(out PlayerBullet bullet))
             {
-                
+                NightPool.Despawn(gameObject);
             }
         }
     }
