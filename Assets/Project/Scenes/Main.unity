@@ -225,6 +225,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &70946117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70946118}
+  m_Layer: 0
+  m_Name: SpeedChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &70946118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70946117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9086044, y: -0.6916293, z: 0.050961956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159056060
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +382,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 519420032}
+    - target: {fileID: 6726535789285897648, guid: cb812845fd8a3e241b21ccbb21487ba7, type: 3}
+      propertyPath: _xOffset
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1523,7 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: -4954814512199460798, guid: 5b779f8692453b44ca06d299b0da6c53, type: 3}
-  _key: 300
+  _key: 8
 --- !u!61 &1371566986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1948,6 +1983,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 519420032}
+    - target: {fileID: 6726535789285897648, guid: cb812845fd8a3e241b21ccbb21487ba7, type: 3}
+      propertyPath: _xOffset
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1970,3 +2009,4 @@ SceneRoots:
   - {fileID: 1874827676}
   - {fileID: 159056062}
   - {fileID: 844546126}
+  - {fileID: 70946118}

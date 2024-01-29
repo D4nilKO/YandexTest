@@ -10,6 +10,7 @@ namespace Project.Components.Scripts
         {
             if (col.TryGetComponent(out PlayerBullet bullet))
             {
+                NightPool.Despawn(bullet.gameObject);
                 NightPool.Despawn(gameObject);
             }
         }
