@@ -1,5 +1,4 @@
-﻿using System;
-using NTC.Global.Pool;
+﻿using NTC.Global.Pool;
 using UnityEngine;
 
 namespace Project.Components.Scripts

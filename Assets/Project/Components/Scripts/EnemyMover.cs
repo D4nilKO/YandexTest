@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using NTC.Global.Pool;
 using UnityEngine;
 using Random = System.Random;

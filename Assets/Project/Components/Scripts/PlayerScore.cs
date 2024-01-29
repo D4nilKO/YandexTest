@@ -7,7 +7,7 @@ namespace Project.Components.Scripts
     public class PlayerScore : MonoBehaviour
     {
         private PlayerCollisionHandler _playerCollisionHandler;
-        
+
         private int _score;
 
         public event Action<int> ScoreChanged;
@@ -32,7 +32,7 @@ namespace Project.Components.Scripts
         {
             _playerCollisionHandler.TouchedCoin += IncreaseScore;
         }
-        
+
         private void OnDisable()
         {
             _playerCollisionHandler.TouchedCoin -= IncreaseScore;

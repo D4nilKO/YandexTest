@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Project.Components.Scripts
+﻿namespace Project.Components.Scripts
 {
-    public class PlayerBullet: Bullet
+    public class PlayerBullet : Bullet
     {
     }
 }

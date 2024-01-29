@@ -37,7 +37,7 @@ namespace Project.Components.Scripts
             {
                 newPosition = new Vector3(newPosition.x, _target.position.y + _yOffset, newPosition.z);
             }
-            
+
             return newPosition;
         }
     }

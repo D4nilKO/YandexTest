@@ -2,7 +2,7 @@
 
 namespace Project.Components.Scripts
 {
-    public class Obstacle: MonoBehaviour
+    public class Obstacle : MonoBehaviour
     {
     }
 }

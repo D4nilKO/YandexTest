@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Project.Components.Scripts
 {
-    public class ScoreView: MonoBehaviour
+    public class ScoreView : MonoBehaviour
     {
         [SerializeField] private PlayerScore _playerScore;
         [SerializeField] private TextMeshProUGUI _scoreTMP;

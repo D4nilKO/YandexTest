@@ -5,20 +5,31 @@ namespace Project.Components.Scripts
 {
     public class GameStarter : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _textTMP;
+        [SerializeField] private TextMeshProUGUI _textTMPMove;
+        [SerializeField] private TextMeshProUGUI _textTMPShoot;
+        
         [SerializeField] private PlayerMover _playerMover;
+        [SerializeField] private PlayerShooter _playerShooter;
 
-        private string _text;
-        private KeyCode _key = KeyCode.Space;
+        private string _textMove;
+        private string _textShoot;
+        
+        private KeyCode _moveKey;
+        private KeyCode _shootKey;
 
         private void Start()
         {
-            _key = _playerMover.GetKey;
+            _moveKey = _playerMover.GetKey;
+            _shootKey = _playerShooter.GetKey;
 
-            _text = $"Press {_key} to start";
-            _textTMP.text = _text;
+            _textMove = $"Press {_moveKey} to start";
+            _textShoot = $"Press {_shootKey} to shoot";
+            
+            _textTMPMove.text = _textMove;
+            _textTMPShoot.text = _textShoot;
 
-            _textTMP.gameObject.SetActive(true);
+            _textTMPMove.gameObject.SetActive(true);
+            _textTMPShoot.gameObject.SetActive(true);
 
             Time.timeScale = 0;
         }
@@ -27,7 +38,7 @@ namespace Project.Components.Scripts
 
         private void Update()
         {
-            if (Input.GetKey(_key))
+            if (Input.GetKey(_moveKey))
             {
                 StartGame();
             }
@@ -35,7 +46,9 @@ namespace Project.Components.Scripts
 
         private void StartGame()
         {
-            _textTMP.gameObject.SetActive(false);
+            _textTMPMove.gameObject.SetActive(false);
+            _textTMPShoot.gameObject.SetActive(false);
+            
             Time.timeScale = 1;
             
             gameObject.SetActive(false);

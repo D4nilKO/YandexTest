@@ -8,6 +8,8 @@ namespace Project.Components.Scripts
         [SerializeField] private Bullet _bullet;
         [SerializeField] private KeyCode _key = KeyCode.A;
 
+        public KeyCode GetKey => _key;
+
         private void Update()
         {
             TryShoot();

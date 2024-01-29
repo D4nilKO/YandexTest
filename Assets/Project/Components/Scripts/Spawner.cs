@@ -31,13 +31,17 @@ namespace Project.Components.Scripts
         private float _startTimerSeconds = 0.1f;
 
         private SyncedTimer _spawnTimer;
-
         private Random _random;
 
         private void Awake()
         {
             _spawnTimer = new SyncedTimer(_timerType, _timerSeconds);
             _random = new Random();
+        }
+
+        private void Start()
+        {
+            _spawnTimer.Start(_startTimerSeconds);
         }
 
         private void OnEnable()
@@ -48,11 +52,6 @@ namespace Project.Components.Scripts
         private void OnDisable()
         {
             _spawnTimer.TimerFinished -= OnTimerFinished;
-        }
-
-        private void Start()
-        {
-            _spawnTimer.Start(_startTimerSeconds);
         }
 
         private Vector3 GetSpawnPoint()

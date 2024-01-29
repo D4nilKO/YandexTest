@@ -10,10 +10,10 @@ namespace Project.Components.Scripts
         [SerializeField] private float _rotationSpeed;
         [SerializeField] private float _minRotationZ;
         [SerializeField] private float _maxRotationZ;
+        [SerializeField] private float _dividerForRotateDown = 2f;
 
         [SerializeField] private KeyCode _moveKey = KeyCode.Space;
 
-        private Vector3 _startPosition;
         private Rigidbody2D _rigidbody;
         private Quaternion _minRotation;
         private Quaternion _maxRotation;
@@ -22,7 +22,6 @@ namespace Project.Components.Scripts
 
         private void Awake()
         {
-            _startPosition = transform.position;
             _rigidbody = GetComponent<Rigidbody2D>();
 
             _minRotation = Quaternion.Euler(0, 0, _minRotationZ);
@@ -46,7 +45,7 @@ namespace Project.Components.Scripts
             else
             {
                 transform.rotation =
-                    Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed / 2 * Time.deltaTime);
+                    Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed / _dividerForRotateDown * Time.deltaTime);
             }
         }
     }
