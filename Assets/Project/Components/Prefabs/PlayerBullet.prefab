@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8757629940612350765}
   - component: {fileID: 3591474304431081701}
   - component: {fileID: 2595668103277785155}
-  - component: {fileID: -4954814512199460798}
+  - component: {fileID: 6665248140680009184}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45741662, y: 0.5814358}
   m_EdgeRadius: 0
---- !u!114 &-4954814512199460798
+--- !u!114 &6665248140680009184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6926777593554516051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b2d49dc132e437eafbd1c4c656d3499, type: 3}
+  m_Script: {fileID: 11500000, guid: fc42eca4553d4027987c98245ab3e488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 14

@@ -7,7 +7,7 @@ namespace Project.Components.Scripts
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.TryGetComponent(out PlayerBullet bullet))
+            if (col.TryGetComponent(out Bullet bullet))
             {
                 NightPool.Despawn(bullet.gameObject);
                 NightPool.Despawn(gameObject);

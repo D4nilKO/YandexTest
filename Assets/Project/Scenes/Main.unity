@@ -1587,6 +1587,7 @@ MonoBehaviour:
   _rotationSpeed: 2
   _minRotationZ: -110
   _maxRotationZ: -70
+  _dividerForRotateDown: 2
   _moveKey: 32
 --- !u!212 &1371566979
 SpriteRenderer:
@@ -1692,7 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49028854403d48eb966800cef42ef366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: -4954814512199460798, guid: 5b779f8692453b44ca06d299b0da6c53, type: 3}
+  _bullet: {fileID: 6665248140680009184, guid: 5b779f8692453b44ca06d299b0da6c53, type: 3}
   _key: 8
 --- !u!61 &1371566986
 BoxCollider2D:

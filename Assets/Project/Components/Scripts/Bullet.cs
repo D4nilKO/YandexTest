@@ -2,6 +2,7 @@
 
 namespace Project.Components.Scripts
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Bullet : MonoBehaviour
     {
         [SerializeField] [Min(0.1f)] private float _speed = 0.1f;
