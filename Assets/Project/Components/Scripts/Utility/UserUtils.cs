@@ -1,7 +1,7 @@
 ﻿using NTC.Global.Pool;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Utility
 {
     public static class UserUtils
     {

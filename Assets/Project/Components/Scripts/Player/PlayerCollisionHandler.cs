@@ -1,8 +1,9 @@
 ﻿using System;
 using NTC.Global.Pool;
+using Project.Components.Scripts.Enemy;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Player
 {
     public class PlayerCollisionHandler : MonoBehaviour
     {
@@ -17,7 +18,7 @@ namespace Project.Components.Scripts
                 TouchedCoin?.Invoke();
             }
 
-            if (collision.TryGetComponent(out Enemy enemy))
+            if (collision.TryGetComponent(out Enemy.Enemy enemy))
             {
                 TouchedEnemy?.Invoke();
             }

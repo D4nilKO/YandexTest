@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMover : MonoBehaviour

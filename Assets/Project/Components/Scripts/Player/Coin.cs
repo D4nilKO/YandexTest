@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Project.Components.Scripts.Utility;
+using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Player
 {
     public class Coin : MonoBehaviour
     {

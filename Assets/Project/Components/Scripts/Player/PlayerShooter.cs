@@ -1,7 +1,8 @@
 ﻿using NTC.Global.Pool;
+using Project.Components.Scripts.Enemy;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Player
 {
     public class PlayerShooter : MonoBehaviour
     {

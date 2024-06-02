@@ -1,7 +1,8 @@
-﻿using TMPro;
+﻿using Project.Components.Scripts.Player;
+using TMPro;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Utility
 {
     public class ScoreView : MonoBehaviour
     {

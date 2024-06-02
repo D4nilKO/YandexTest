@@ -1,7 +1,7 @@
 ﻿using NTC.Global.Pool;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Enemy
 {
     public class EnemyCollisionHandler: MonoBehaviour
     {
@@ -9,7 +9,7 @@ namespace Project.Components.Scripts
         {
             if (col.TryGetComponent(out Bullet bullet))
             {
-                NightPool.Despawn(bullet.gameObject);
+                NightPool.Despawn(bullet);
                 NightPool.Despawn(gameObject);
             }
         }

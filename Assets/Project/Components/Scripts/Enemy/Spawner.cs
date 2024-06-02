@@ -3,7 +3,7 @@ using UnityEngine;
 using VavilichevGD.Utils.Timing;
 using Random = System.Random;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Enemy
 {
     public class Spawner : MonoBehaviour
     {

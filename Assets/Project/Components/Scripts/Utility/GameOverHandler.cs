@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Project.Components.Scripts.Player;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Utility
 {
     public class GameOverHandler : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Player
 {
     [RequireComponent(typeof(PlayerCollisionHandler))]
     public class PlayerScore : MonoBehaviour

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using NTC.Global.Pool;
+using Project.Components.Scripts.Utility;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Project.Components.Scripts
+namespace Project.Components.Scripts.Enemy
 {
     public class EnemyMover : MonoBehaviour, IPoolItem
     {
